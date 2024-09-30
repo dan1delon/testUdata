@@ -36,20 +36,19 @@ const TaskForm = () => {
   } = useForm({
     resolver: yupResolver(FormSchema),
     mode: 'onSubmit',
-    defaultValues: {
-      task: '',
-    },
+    defaultValues: { task: '' },
   });
 
   const onSubmit = data => {
-    dispatch(addTask(data));
+    const taskData = { name: data.task };
+    dispatch(addTask(taskData));
     reset();
     notify();
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={css.form}>
-      <h2 className={css.title}>Your tasks</h2>
+      <h2 className={css.title}>Add task</h2>
       <div className={css.formWrapper}>
         <label className={css.labelWrapper}>
           <input

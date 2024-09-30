@@ -16,7 +16,7 @@ const tasksSlice = createSlice({
         return {
           payload: {
             id: nanoid(),
-            name: taskName,
+            name: taskName.name,
             completed: false,
             createdAt: new Date().toISOString(),
           },

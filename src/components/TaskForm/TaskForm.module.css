@@ -1,0 +1,77 @@
+.form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  border: 1px solid rgba(18, 20, 23, 0.1);
+  border-radius: 12px;
+  color: rgb(18, 20, 23);
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: left;
+  padding: 16px 18px;
+  resize: none;
+  transition: all var(--transition-duration) var(--transition-timing-function);
+}
+
+.input:focus,
+.input:active {
+  outline: none;
+  border: 1px solid var(--light-blue-color);
+}
+
+input::placeholder {
+  color: rgb(18, 20, 23);
+  font-size: 16px;
+  line-height: 22px;
+  text-align: left;
+}
+
+.errorMessage {
+  color: #ef5050;
+  font-size: 13px;
+}
+
+.inputError {
+  border: 1px solid #ef5050;
+  color: #ef5050;
+  transition: all 0.3s;
+}
+
+.btn {
+  width: 100%;
+  padding: 15px;
+  color: rgb(18, 20, 23);
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0%;
+  text-align: center;
+  border-radius: 12px;
+  background-color: var(--dark-blue-color);
+  transition: all var(--transition-duration) var(--transition-timing-function);
+}
+
+.btn:hover {
+  background-color: var(--dark-blue-color-hover);
+}
