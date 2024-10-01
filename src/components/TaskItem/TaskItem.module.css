@@ -1,23 +1,75 @@
 .wrapper {
+  width: 100%;
+  min-height: 210px;
   padding: 15px;
   display: flex;
-  gap: 10px;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
-.title {
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .date {
+  text-align: right;
+}
+
+.btnWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .btnDone {
+  color: var(--primary-black-color);
+  background-color: transparent;
+  border: 1px solid var(--primary-green-color);
+  border-radius: 12px;
+  padding: 5px;
+  transition: all var(--transition-duration) var(--transition-timing-function);
 }
 
-.btnDelete {
+.btnDone:hover,
+.btnDone:active {
+  background-color: var(--primary-green-color);
+  color: var(--primary-white-color);
 }
 
 .done {
+  color: var(--primary-green-color);
+  transition: all var(--transition-duration) var(--transition-timing-function);
+}
+
+.btnDone:hover .done,
+.btnDone:active .done {
+  color: var(--primary-white-color);
+}
+
+.btnDelete {
+  color: var(--primary-black-color);
+  background-color: transparent;
+  border: 1px solid var(--primary-red-color);
+  border-radius: 12px;
+  padding: 5px;
+  transition: all var(--transition-duration) var(--transition-timing-function);
+}
+
+.btnDelete:hover,
+.btnDelete:active {
+  background-color: var(--primary-red-color);
+  color: var(--primary-white-color);
 }
 
 .delete {
+  color: var(--primary-red-color);
+  transition: all var(--transition-duration) var(--transition-timing-function);
+}
+
+.btnDelete:hover .delete,
+.btnDelete:active .delete {
+  color: var(--primary-white-color);
 }

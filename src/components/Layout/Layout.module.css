@@ -8,9 +8,8 @@
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   max-width: 1440px;
   box-sizing: border-box;
-  padding: 0 32px;
-  height: 100vh;
+  padding: 64px 32px;
+  margin: auto 0;
 }

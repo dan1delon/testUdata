@@ -1,28 +1,14 @@
 import css from './TaskForm.module.css';
-import toast from 'react-hot-toast';
 import { useForm } from 'react-hook-form';
 import clsx from 'clsx';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { addTask } from '../../redux/tasks/slice';
 import { useDispatch } from 'react-redux';
+import { notifySuccess } from '../../Helpers/toastNotification';
 
 const TaskForm = () => {
   const dispatch = useDispatch();
-
-  const notify = () =>
-    toast.success('Task added successfully', {
-      style: {
-        border: '1px solid #38cd3e',
-        color: '#121417',
-        textAlign: 'center',
-        position: 'top-right',
-      },
-      iconTheme: {
-        primary: '#38cd3e',
-        secondary: '#FFFAEE',
-      },
-    });
 
   const FormSchema = Yup.object({
     task: Yup.string().min(3).required('Please write a task'),
@@ -43,7 +29,7 @@ const TaskForm = () => {
     const taskData = { name: data.task };
     dispatch(addTask(taskData));
     reset();
-    notify();
+    notifySuccess('Task successfully added!');
   };
 
   return (

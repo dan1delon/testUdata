@@ -1,10 +1,11 @@
-import css from './TasksList.module.css';
+import clsx from 'clsx';
 import TaskItem from '../TaskItem/TaskItem';
 import { useSelector } from 'react-redux';
-import { selectTasks } from '../../redux/tasks/selectors';
+import css from './TasksList.module.css';
+import { selectFilteredAndSortedTasks } from '../../redux/filters/selectors';
 
 const TasksList = () => {
-  const tasks = useSelector(selectTasks);
+  const tasks = useSelector(selectFilteredAndSortedTasks);
 
   return (
     <ul className={css.wrapper}>
@@ -14,7 +15,12 @@ const TasksList = () => {
         </li>
       )}
       {tasks.map(task => (
-        <li key={task.id} className={css.listItem}>
+        <li
+          key={task.id}
+          className={clsx(css.listItem, {
+            [css.completed]: task.completed,
+          })}
+        >
           <TaskItem task={task} />
         </li>
       ))}
