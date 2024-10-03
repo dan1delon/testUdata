@@ -4,16 +4,12 @@ import {
   changeSort,
   clearFilter,
 } from '../../redux/filters/slice';
-import {
-  selectFilteredAndSortedTasks,
-  selectFilterStatus,
-} from '../../redux/filters/selectors';
+import { selectFilterStatus } from '../../redux/filters/selectors';
 import css from './FilterAndSort.module.css';
 
 const FilterAndSort = () => {
   const dispatch = useDispatch();
   const filter = useSelector(selectFilterStatus);
-  const tasks = useSelector(selectFilteredAndSortedTasks);
 
   const handleFilterChange = event => {
     dispatch(changeFilter(event.target.value));
@@ -26,10 +22,6 @@ const FilterAndSort = () => {
   const handleResetFilter = () => {
     dispatch(clearFilter());
   };
-
-  if (tasks.length <= 1) {
-    return null;
-  }
 
   return (
     <div className={css.wrapper}>
